@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Petit Enfant | Boutique Abbigliamento & Cerimonia Bambini Foggia dal 1978</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        silk: '#FAF8F5',
+                        cream: '#F4EFEA',
+                        champagne: {
+                            light: '#F8F3EC',
+                            DEFAULT: '#DFD2C2',
+                            dark: '#A68D72'
+                        },
+                        gold: {
+                            light: '#E5D3B3',
+                            DEFAULT: '#B89762',
+                            dark: '#876936'
+                        },
+                        blush: {
+                            light: '#FDF5F5',
+                            DEFAULT: '#F3E1E1',
+                            dark: '#C89292'
+                        },
+                        powderblue: {
+                            light: '#F2F7F9',
+                            DEFAULT: '#D8E5EC',
+                            dark: '#7395A8'
+                        },
+                        sage: {
+                            light: '#F1F4F1',
+                            DEFAULT: '#D4DDD3',
+                            dark: '#6E8B6D'
+                        },
+                        charcoal: '#2B2927'
+                    },
+                    fontFamily: {
+                        serif: ['Cormorant Garamond', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    animation: {
+                        'float-slow': 'float 6s ease-in-out infinite',
+                        'float-delayed': 'float 6s ease-in-out 3s infinite',
+                        'pulse-subtle': 'pulseSubtle 3s ease-in-out infinite',
+                        'shimmer': 'shimmer 2.5s infinite linear',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-10px) rotate(1deg)' },
+                        },
+                        pulseSubtle: {
+                            '0%, 100%': { opacity: '1', transform: 'scale(1)' },
+                            '50%': { opacity: '0.85', transform: 'scale(1.02)' },
+                        },
+                        shimmer: {
+                            '0%': { backgroundPosition: '-200% 0' },
+                            '100%': { backgroundPosition: '200% 0' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-nav {
+            background: rgba(250, 248, 245, 0.82);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #B89762 0%, #876936 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .blush-gradient-bg {
+            background: linear-gradient(180deg, #FDF5F5 0%, #FAF8F5 100%);
+        }
+        .silk-dots {
+            background-image: radial-gradient(#B89762 0.8px, transparent 0.8px);
+            background-size: 24px 24px;
+            opacity: 0.12;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #FAF8F5;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #DFD2C2;
+            border-radius: 99px;
+        }
+        .tab-active {
+            background-color: #B89762 !important;
+            color: #FFFFFF !important;
+            box-shadow: 0 4px 14px rgba(184, 151, 98, 0.25);
+        }
+    </style>
+</head>
+<body class="bg-silk text-charcoal font-sans antialiased selection:bg-gold-light selection:text-charcoal custom-scrollbar">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-gradient-to-r from-blush-light via-champagne-light to-powderblue-light border-b border-champagne/30 py-2 px-4 text-center text-xs font-medium text-charcoal/80 flex items-center justify-center gap-2">
+        <span class="inline-block w-2 h-2 rounded-full bg-gold animate-ping"></span>
+        <span>Nuova Collezione Battesimo & Cerimonia 2026 • Realizzati con tessuti pregiati 100% Made in Italy</span>
+        <a href="#collezione" class="underline hover:text-gold transition-colors font-semibold ml-1">Scopri di più</a>
+    </div>
+
+    <!-- Sticky Glass Navigation -->
+    <header class="sticky top-0 z-40 w-full glass-nav border-b border-champagne/40 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3.5 group">
+                <div class="w-11 h-11 rounded-full bg-gradient-to-br from-champagne-light to-blush flex items-center justify-center border border-gold/30 text-gold-dark group-hover:scale-105 transition-transform shadow-sm">
+                    <i data-lucide="crown" class="w-5 h-5"></i>
+                </div>
+                <div>
+                    <span class="font-serif text-2xl md:text-3xl font-semibold tracking-tight text-charcoal block leading-none">Le Petit Enfant</span>
+                    <span class="text-[10px] uppercase tracking-[0.2em] text-gold-dark font-medium mt-1 block">Boutique Foggia dal 1978</span>
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-charcoal/80">
+                <a href="#collezione" class="hover:text-gold transition-colors">Collezione</a>
+                <a href="#chi-siamo" class="hover:text-gold transition-colors">Chi Siamo</a>
+                <a href="#testimonianze" class="hover:text-gold transition-colors">Dicono di Noi</a>
+                <a href="#hosting-guide" class="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-sage-light text-sage-dark border border-sage/40 hover:bg-sage/20 transition-all font-semibold text-xs">
+                    <i data-lucide="terminal" class="w-3.5 h-3.5"></i> Hosting & Cloudflare
+                </a>
+            </nav>
+
+            <!-- Call To Actions -->
+            <div class="hidden sm:flex items-center gap-3">
+                <a href="https://wa.me/390881709881" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2.5 rounded-full border border-gold/30 bg-white/60 text-xs font-semibold text-charcoal hover:bg-white hover:border-gold transition-all shadow-sm">
+                    <i data-lucide="message-circle" class="w-4 h-4 text-emerald-600"></i> WhatsApp
+                </a>
+                <a href="#contatti" class="px-5 py-2.5 rounded-full bg-gold text-white text-xs font-semibold hover:bg-gold-dark transition-all shadow-md shadow-gold/20">
+                    Incontra l'Atelier
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 rounded-xl text-charcoal hover:bg-champagne-light transition-colors" aria-label="Menu">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-silk border-b border-champagne/40 px-6 py-5 space-y-4 shadow-xl">
+            <a href="#collezione" class="block text-base font-medium text-charcoal hover:text-gold border-b border-champagne/20 pb-2">Collezione Cerimonia</a>
+            <a href="#chi-siamo" class="block text-base font-medium text-charcoal hover:text-gold border-b border-champagne/20 pb-2">Chi Siamo</a>
+            <a href="#testimonianze" class="block text-base font-medium text-charcoal hover:text-gold border-b border-champagne/20 pb-2">Dicono di Noi</a>
+            <a href="#hosting-guide" class="block text-base font-medium text-sage-dark hover:text-sage border-b border-champagne/20 pb-2">Guida Hosting & Cloudflare</a>
+            <div class="pt-2 flex flex-col gap-2.5">
+                <a href="https://wa.me/390881709881" target="_blank" class="flex items-center justify-center gap-2 py-3 rounded-xl border border-gold/30 text-charcoal font-semibold text-xs">
+                    <i data-lucide="message-circle" class="w-4 h-4 text-emerald-600"></i> Contattaci su WhatsApp
+                </a>
+                <a href="#contatti" class="flex items-center justify-center py-3 rounded-xl bg-gold text-white font-semibold text-xs shadow-md">
+                    Prenota Prova in Boutique
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden pt-12 pb-20 md:pt-24 md:pb-32 bg-gradient-to-b from-silk via-blush-light/40 to-silk">
+        <div class="absolute inset-0 silk-dots pointer-events-none"></div>
+        
+        <!-- Subtle Floating Soft Bubbles -->
+        <div class="absolute top-12 left-10 w-64 h-64 rounded-full bg-blush/40 blur-3xl animate-float-slow pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-80 h-80 rounded-full bg-powderblue/40 blur-3xl animate-float-delayed pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                
+                <!-- Text Column -->
+                <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 border border-gold/30 text-gold-dark text-xs font-semibold uppercase tracking-wider shadow-sm">
+                        <i data-lucide="sparkles" class="w-4 h-4 text-gold"></i>
+                        Eccellenza Sartoriale A Foggia Dal 1978
+                    </div>
+
+                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal leading-[1.12] text-charcoal">
+                        L'eleganza più soffice per i <span class="italic font-serif gold-gradient-text">primi grandi momenti</span> del tuo bambino.
+                    </h1>
+
+                    <p class="text-charcoal/70 text-base sm:text-lg font-light leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        Abiti da Battesimo e Cerimonia ideati con tessuti pregiati Made in Italy: Lino purissimo, Cotone biologico, Mikado e Pizzo ricamato. Morbidezza garantita per la pelle delicata dei più piccoli.
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="pt-4 flex flex-col sm:flex-row gap-3.5 justify-center lg:justify-start">
+                        <a href="#collezione" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gold text-white font-medium text-sm shadow-lg shadow-gold/20 hover:bg-gold-dark transition-all duration-300 hover:scale-[1.02]">
+                            Esplora I 9 Capi Esclusivi
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                        <a href="#chi-siamo" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-gold/30 bg-white/80 backdrop-blur-sm text-charcoal font-medium text-sm hover:bg-white hover:border-gold transition-all duration-300">
+                            La Nostra Storia
+                        </a>
+                    </div>
+
+                    <!-- Trust Stats Grid -->
+                    <div class="pt-8 border-t border-champagne/40 grid grid-cols-3 gap-4 max-w-lg mx-auto lg:mx-0">
+                        <div class="text-center lg:text-left">
+                            <span class="block font-serif text-2xl md:text-3xl font-semibold text-gold-dark">48+</span>
+                            <span class="text-[11px] uppercase tracking-wider text-charcoal/60 font-medium">Anni di Attività</span>
+                        </div>
+                        <div class="text-center lg:text-left">
+                            <span class="block font-serif text-2xl md:text-3xl font-semibold text-gold-dark">100%</span>
+                            <span class="text-[11px] uppercase tracking-wider text-charcoal/60 font-medium">Made in Italy</span>
+                        </div>
+                        <div class="text-center lg:text-left">
+                            <span class="block font-serif text-2xl md:text-3xl font-semibold text-gold-dark">4.9 ★</span>
+                            <span class="text-[11px] uppercase tracking-wider text-charcoal/60 font-medium">Valutazione Clienti</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature Visual Frame -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Soft Gradient Decorative Border -->
+                        <div class="absolute -inset-3 rounded-[2rem] bg-gradient-to-tr from-blush via-champagne to-powderblue opacity-70 blur-md transform rotate-1"></div>
+
+                        <div class="relative bg-white p-3.5 rounded-[1.8rem] shadow-xl border border-champagne/50 overflow-hidden group">
+                            <div class="relative h-[420px] rounded-2xl overflow-hidden bg-cream">
+                                <img id="hero-image" src="https://lepetitfoggia.files.wordpress.com/2018/03/completo-battesimo-luis.jpg" 
+                                     alt="Abito Battesimo Le Petit Enfant" 
+                                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=800&q=80';">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                                
+                                <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-full text-[11px] font-bold text-gold-dark border border-gold/20 flex items-center gap-1.5 shadow-sm">
+                                    <i data-lucide="heart" class="w-3.5 h-3.5 text-blush-dark fill-blush-dark"></i>
+                                    Scelto dalle Mamme
+                                </div>
+
+                                <div class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-md p-4 rounded-xl border border-champagne/40 shadow-lg">
+                                    <p class="font-serif text-lg font-bold text-charcoal">Completo Battesimo LUIS</p>
+                                    <p class="text-xs text-charcoal/70 font-light">Cotone 100% Made In Italy • Completo all'inglese con gilet, papillon e scarpine</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Floating Micro Badge -->
+                        <div class="absolute -bottom-6 -left-6 bg-white p-3.5 rounded-2xl border border-champagne/50 shadow-xl flex items-center gap-3 animate-float-slow">
+                            <div class="w-10 h-10 rounded-xl bg-sage-light flex items-center justify-center text-sage-dark">
+                                <i data-lucide="shield-check" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-charcoal">Tessuti Ipoallergenici</p>
+                                <p class="text-[10px] text-charcoal/60">Delicati sulla pelle del neonato</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Catalog Section -->
+    <section id="collezione" class="py-20 bg-silk relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-gold-dark uppercase tracking-[0.2em] text-xs font-bold block mb-2">Collezione Esclusiva Battesimo</span>
+                <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-charcoal">I 9 Capi Reali della Nostra Boutique</h2>
+                <p class="text-charcoal/70 text-sm sm:text-base font-light mt-3">
+                    Sfoglia i completi da bimbo e gli abiti da bimba originali del sito Le Petit Enfant. Clicca su ciascun capo per scoprire i tessuti e prenotare la prova.
+                </p>
+
+                <!-- Interactive Category Filters -->
+                <div class="flex flex-wrap items-center justify-center gap-2 mt-8" id="filter-buttons">
+                    <button onclick="filterCatalog('all')" class="filter-btn tab-active px-5 py-2.5 rounded-full text-xs font-semibold bg-white border border-champagne text-charcoal hover:bg-champagne-light transition-all">
+                        Tutti i Capi (9)
+                    </button>
+                    <button onclick="filterCatalog('bimbo')" class="filter-btn px-5 py-2.5 rounded-full text-xs font-semibold bg-white border border-champagne text-charcoal hover:bg-champagne-light transition-all">
+                        Bimbo (Completi)
+                    </button>
+                    <button onclick="filterCatalog('bimba')" class="filter-btn px-5 py-2.5 rounded-full text-xs font-semibold bg-white border border-champagne text-charcoal hover:bg-champagne-light transition-all">
+                        Bimba (Abiti)
+                    </button>
+                    <button onclick="filterCatalog('lino')" class="filter-btn px-5 py-2.5 rounded-full text-xs font-semibold bg-white border border-champagne text-charcoal hover:bg-champagne-light transition-all">
+                        Lino & Cotone
+                    </button>
+                    <button onclick="filterCatalog('mikado')" class="filter-btn px-5 py-2.5 rounded-full text-xs font-semibold bg-white border border-champagne text-charcoal hover:bg-champagne-light transition-all">
+                        Mikado, Tulle & Pizzo
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="product-cards-container">
+                
+                <!-- Product 1: LUIS -->
+                <div class="product-card group bg-white rounded-2xl border border-champagne/40 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300" data-category="bimbo lino">
+                    <div class="relative h-80 bg-champagne-light overflow-hidden">
+                        <img src="https://lepetitfoggia.files.wordpress.com/2018/03/completo-battesimo-luis.jpg" 
+                             alt="Completo Battesimo LUIS" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?auto=format&fit=crop&w=600&q=80';">
+                        <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-md text-gold-dark text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full border border-gold/20">Bimbo • Cotone</span>
+                        <span class="absolute top-3 right-3 bg-sage-light text-sage-dark text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">Made in Italy</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-2xl font-semibold text-charcoal mb-1">Completo Battesimo LUIS</h3>
+                        <p class="text-xs font-bold text-gold-dark uppercase tracking-wider mb-3">Cotone 100% Made In Italy</p>
+                        <p class="text-charcoal/70 text-xs leading-relaxed line-clamp-2 mb-4 font-light">
+                            Raffinato completo all'inglese corredato di gilet finemente cucito, papillon coordinato e scarpine in morbida pelle.
+                        </p>
+                        <button onclick="openProductModal(0)" class="w-full py-3 rounded-xl border border-gold/30 text-gold-dark font-semibold text-xs hover:bg-gold hover:text-white transition-all flex items-center justify-center gap-2 shadow-sm">
+                            <i data-lucide="eye" class="w-4 h-4"></i> Dettagli & Taglie
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 2: LUCA -->
+                <div class="product-card group bg-white rounded-2xl border border-champagne/40 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300" data-category="bimbo">
+                    <div class="relative h-80 bg-champagne-light overflow-hidden">
+                        <img src="https://lepetitfoggia.files.wordpress.com/2018/03/completo-battesimo-luca.jpg" 
+                             alt="Completo Battesimo LUCA" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1503944583220-79d8926ad5e2?auto=format&fit=crop&w=600&q=80';">
+                        <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-md text-gold-dark text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full border border-gold/20">Bimbo • Classico</span>
+                        <span class="absolute top-3 right-3 bg-sage-light text-sage-dark text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">Made in Italy</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-2xl font-semibold text-charcoal mb-1">Completo Battesimo LUCA</h3>
+                        <p class="text-xs font-bold text-gold-dark uppercase tracking-wider mb-3">Cotone / Viscosa</p>
+                        <p class="text-charcoal/70 text-xs leading-relaxed line-clamp-2 mb-4 font-light">
+                            Abiti formale e senza tempo composto da elegante giacca strutturata, papillon abbinato e scarpine in pelle prima scelta.
+                        </p>
+                        <button onclick="openProductModal(1)" class="w-full py-3 rounded-xl border border-gold/30 text-gold-dark font-semibold text-xs hover:bg-gold hover:text-white transition-all flex items-center justify-center gap-2 shadow-sm">
+                            <i data-lucide="eye" class="w-4 h-4"></i> Dettagli & Taglie
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 3: MIRKO -->
+                <div class="product-card group bg-white rounded-2xl border border-champagne/40 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300" data-category="bimbo lino">
+                    <div class="relative h-80 bg-champagne-light overflow-hidden">
+                        <img src="https://lepetitfoggia.files.wordpress.com/2018/03/completo-battesimo-mirko.jpg" 
+                             alt="Completo Battesimo MIRKO" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1471286174890-9c112ffca5b4?auto=format&fit=crop&w=600&q=80';">
+                        <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-md text-gold-dark text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full border border-gold/20">Bimbo • Lino</span>
+                        <span class="absolute top-3 right-3 bg-sage-light text-sage-dark text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">Made in Italy</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-2xl font-semibold text-charcoal mb-1">Completo Battesimo MIRKO</h3>
+                        <p class="text-xs font-bold text-gold-dark uppercase tracking-wider mb-3">Cotone / Lino 100%</p>
+                        <p class="text-charcoal/70 text-xs leading-relaxed line-clamp-2 mb-4 font-light">
+                            Completo fresco ed estivo stile inglese con camicia con collo alla coreana, bretelle regolabili e scarpine in pelle.
+                        </p>
+                        <button onclick="openProductModal(2)" class="w-full py-3 rounded-xl border border-gold/30 text-gold-dark font-semibold text-xs hover:bg-gold hover:text-white transition-all flex items-center justify-center gap-2 shadow-sm">
+                            <i data-lucide="eye" class="w-4 h-4"></i> Dettagli & Taglie
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 4: ELISA -->
+                <div class="product-card group bg-white rounded-2xl border border-champagne/40 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300" data-category="bimba mikado">
+                    <div class="relative h-80 bg-champagne-light overflow-hidden">
+                        <img src="https://lepetitfoggia.files.wordpress.com/2018/03/abito-battesimo-elisa.jpg" 
+                             alt="Abito Battesimo ELISA" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?auto=format&fit=crop&w=600&q=80';">
+                        <span class="absolute top-3 left-3 bg-blush-light text-blush-dark text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full border border-blush/40">Bimba • Tulle & Mikado</span>
+                        <span class="absolute top-3 right-3 bg-sage-light text-sage-dark text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">Made in Italy</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-2xl font-semibold text-charcoal mb-1">Abito Battesimo ELISA</h3>
+                        <p class="text-xs font-bold text-blush-dark uppercase tracking-wider mb-3">Tulle e Mikado di Seta</p>
+                        <p class="text-charcoal/70 text-xs leading-relaxed line-clamp-2 mb-4 font-light">
+                            Incantevole abito con gonna in tulle soffice a più livelli, corpetto satinato in mikado e scarpine coordinate in pelle.
+                        </p>
+                        <button onclick="openProductModal(3)" class="w-full py-3 rounded-xl border border-gold/30 text-gold-dark font-semibold text-xs hover:bg-gold hover:text-white transition-all flex items-center justify-center gap-2 shadow-sm">
+                            <i data-lucide="eye" class="w-4 h-4"></i> Dettagli & Taglie
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 5: ROBERTO -->
+                <div class="product-card group bg-white rounded-2xl border border-champagne/40 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300" data-category="bimbo lino">
+                    <div class="relative h-80 bg-champagne-light overflow-hidden">
+                        <img src="https://lepetitfoggia.files.wordpress.com/2018/03/completo-battesimo-roberto.jpg" 
+                             alt="Completo Battesimo ROBERTO" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1503944583220-79d8926ad5e2?auto=format&fit=crop&w=600&q=80';">
+                        <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-md text-gold-dark text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full border border-gold/20">Bimbo • Lino Naturale</span>
+                        <span class="absolute top-3 right-3 bg-sage-light text-sage-dark text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">Made in Italy</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-2xl font-semibold text-charcoal mb-1">Completo Battesimo ROBERTO</h3>
+                        <p class="text-xs font-bold text-gold-dark uppercase tracking-wider mb-3">Lino / Cotone 100%</p>
+                        <p class="text-charcoal/70 text-xs leading-relaxed line-clamp-2 mb-4 font-light">
+                            Raffinato stile all'inglese impreziosito da bretelle coordinato, papillon sartoriale e morbide scarpine in cotone biologico.
+                        </p>
+                        <button onclick="openProductModal(4)" class="w-full py-3 rounded-xl border border-gold/30 text-gold-dark font-semibold text-xs hover:bg-gold hover:text-white transition-all flex items-center justify-center gap-2 shadow-sm">
+                            <i data-lucide="eye" class="w-4 h-4"></i> Dettagli & Taglie
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 6: FLORIS -->
+                <div class="product-card group bg-white rounded-2xl border border-champagne/40 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300" data-category="bimba mikado">
+                    <div class="relative h-80 bg-champagne-light overflow-hidden">
+                        <img src="https://lepetitfoggia.files.wordpress.com/2018/03/abito-battesimo-floris.jpg" 
+                             alt="Abito Battesimo FLORIS" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=600&q=80';">
+                        <span class="absolute top-3 left-3 bg-blush-light text-blush-dark text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full border border-blush/40">Bimba • Mikado & Organza</span>
+                        <span class="absolute top-3 right-3 bg-sage-light text-sage-dark text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">Made in Italy</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-2xl font-semibold text-charcoal mb-1">Abito Battesimo FLORIS</h3>
+                        <p class="text-xs font-bold text-blush-dark uppercase tracking-wider mb-3">Mikado & Organza Seta</p>
+                        <p class="text-charcoal/70 text-xs leading-relaxed line-clamp-2 mb-4 font-light">
+                            Creazione principesca con veli in organza ricamata, dettaglio floreale in vita e scarpine in pelle per il massimo comfort.
+                        </p>
+                        <button onclick="openProductModal(5)" class="w-full py-3 rounded-xl border border-gold/30 text-gold-dark font-semibold text-xs hover:bg-gold hover:text-white transition-all flex items-center justify-center gap-2 shadow-sm">
+                            <i data-lucide="eye" class="w-4 h-4"></i> Dettagli & Taglie
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 7: MARTA -->
+                <div class="product-card group bg-white rounded-2xl border border-champagne/40 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300" data-category="bimba mikado">
+                    <div class="relative h-80 bg-champagne-light overflow-hidden">
+                        <img src="https://lepetitfoggia.files.wordpress.com/2018/03/abito-battesimo-marta.jpg" 
+                             alt="Abito Battesimo MARTA" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?auto=format&fit=crop&w=600&q=80';">
+                        <span class="absolute top-3 left-3 bg-blush-light text-blush-dark text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full border border-blush/40">Bimba • Tradizionale</span>
+                        <span class="absolute top-3 right-3 bg-sage-light text-sage-dark text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">Made in Italy</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-2xl font-semibold text-charcoal mb-1">Abito Battesimo MARTA</h3>
+                        <p class="text-xs font-bold text-blush-dark uppercase tracking-wider mb-3">Mikado & Organza Classica</p>
+                        <p class="text-charcoal/70 text-xs leading-relaxed line-clamp-2 mb-4 font-light">
+                            Linee classiche e sobrie in tessuto mikado con fiocco satinato posteriore staccabile e scarpine coordinate in pelle.
+                        </p>
+                        <button onclick="openProductModal(6)" class="w-full py-3 rounded-xl border border-gold/30 text-gold-dark font-semibold text-xs hover:bg-gold hover:text-white transition-all flex items-center justify-center gap-2 shadow-sm">
+                            <i data-lucide="eye" class="w-4 h-4"></i> Dettagli & Taglie
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 8: ROBERTA -->
+                <div class="product-card group bg-white rounded-2xl border border-champagne/40 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300" data-category="bimba mikado">
+                    <div class="relative h-80 bg-champagne-light overflow-hidden">
+                        <img src="https://lepetitfoggia.files.wordpress.com/2018/03/abito-battesimo-roberta.jpg" 
+                             alt="Abito Battesimo ROBERTA" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=600&q=80';">
+                        <span class="absolute top-3 left-3 bg-blush-light text-blush-dark text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full border border-blush/40">Bimba • Pizzo Cantù</span>
+                        <span class="absolute top-3 right-3 bg-sage-light text-sage-dark text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">Made in Italy</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-2xl font-semibold text-charcoal mb-1">Abito Battesimo ROBERTA</h3>
+                        <p class="text-xs font-bold text-blush-dark uppercase tracking-wider mb-3">Tulle & Pizzo Pregiato</p>
+                        <p class="text-charcoal/70 text-xs leading-relaxed line-clamp-2 mb-4 font-light">
+                            Dettagli ricamati in pizzo ad ago sul corpetto con gonna soffice in tulle e fodera anallergica in cotone.
+                        </p>
+                        <button onclick="openProductModal(7)" class="w-full py-3 rounded-xl border border-gold/30 text-gold-dark font-semibold text-xs hover:bg-gold hover:text-white transition-all flex items-center justify-center gap-2 shadow-sm">
+                            <i data-lucide="eye" class="w-4 h-4"></i> Dettagli & Taglie
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 9: VINNY -->
+                <div class="product-card group bg-white rounded-2xl border border-champagne/40 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300" data-category="bimbo lino">
+                    <div class="relative h-80 bg-champagne-light overflow-hidden">
+                        <img src="https://lepetitfoggia.files.wordpress.com/2018/03/completo-battesimo-vinny.jpg" 
+                             alt="Completo Battesimo VINNY" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1471286174890-9c112ffca5b4?auto=format&fit=crop&w=600&q=80';">
+                        <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-md text-gold-dark text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full border border-gold/20">Bimbo • Puro Lino</span>
+                        <span class="absolute top-3 right-3 bg-sage-light text-sage-dark text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">Made in Italy</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-2xl font-semibold text-charcoal mb-1">Completo Battesimo VINNY</h3>
+                        <p class="text-xs font-bold text-gold-dark uppercase tracking-wider mb-3">Puro Lino 100%</p>
+                        <p class="text-charcoal/70 text-xs leading-relaxed line-clamp-2 mb-4 font-light">
+                            Set vintage chic completo di gilet, papillon, deliziosa coppola coordinata in lino e scarpine in morbida pelle.
+                        </p>
+                        <button onclick="openProductModal(8)" class="w-full py-3 rounded-xl border border-gold/30 text-gold-dark font-semibold text-xs hover:bg-gold hover:text-white transition-all flex items-center justify-center gap-2 shadow-sm">
+                            <i data-lucide="eye" class="w-4 h-4"></i> Dettagli & Taglie
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Boutique Section -->
+    <section id="chi-siamo" class="py-20 bg-gradient-to-b from-champagne-light/50 via-silk to-silk border-y border-champagne/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-6 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold/10 text-gold-dark text-xs font-bold uppercase tracking-wider border border-gold/20">
+                        <i data-lucide="award" class="w-4 h-4"></i> Storia & Tradizione A Foggia
+                    </div>
+
+                    <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-charcoal leading-tight">
+                        Abiti per la cerimonia dei tuoi figli, creati con la stessa cura dal 1978.
+                    </h2>
+
+                    <p class="text-charcoal/70 text-sm sm:text-base leading-relaxed font-light">
+                        <strong>Le Petit Enfant</strong> nasce a Foggia come punto di riferimento assoluto per chi cerca l'eccellenza dell'abbigliamento infantile da cerimonia. 
+                    </p>
+
+                    <p class="text-charcoal/70 text-sm sm:text-base leading-relaxed font-light">
+                        Negli anni abbiamo accompagnato generazioni di famiglie foggiane nei loro momenti indimenticabili: dal Battesimo alla Prima Comunione. Selezioniamo solo manifatture italiane d'élite con finiture realizzate a mano e fodere anallergiche in puro cotone biologico.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-4 pt-4">
+                        <div class="p-4 rounded-2xl bg-white border border-champagne/50 shadow-sm">
+                            <div class="w-9 h-9 rounded-xl bg-blush-light text-blush-dark flex items-center justify-center mb-2">
+                                <i data-lucide="scissors" class="w-5 h-5"></i>
+                            </div>
+                            <h4 class="font-serif font-bold text-base text-charcoal">Cura Sartoriale</h4>
+                            <p class="text-xs text-charcoal/60 font-light mt-1">Personalizzazione e regolazioni su misura in atelier.</p>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-white border border-champagne/50 shadow-sm">
+                            <div class="w-9 h-9 rounded-xl bg-powderblue-light text-powderblue-dark flex items-center justify-center mb-2">
+                                <i data-lucide="heart-handshake" class="w-5 h-5"></i>
+                            </div>
+                            <h4 class="font-serif font-bold text-base text-charcoal">Fodere Anallergiche</h4>
+                            <p class="text-xs text-charcoal/60 font-light mt-1">Pelle protetta da cuciture morbide e traspiranti.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 relative">
+                    <div class="relative bg-white p-4 rounded-[2rem] shadow-xl border border-champagne/40">
+                        <img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=800&q=80" alt="Atelier Le Petit Enfant Foggia" class="w-full h-[420px] object-cover rounded-2xl">
+                        
+                        <div class="absolute inset-x-8 bottom-8 p-6 bg-white/95 backdrop-blur-md rounded-2xl border border-gold/20 shadow-lg text-center">
+                            <p class="font-serif text-2xl font-bold text-charcoal">Ti Aspettiamo in Atelier</p>
+                            <p class="text-xs text-charcoal/70 font-light mt-1">Vieni a provare la collezione insieme alle nostre consulenti di stile.</p>
+                            <a href="#contatti" class="inline-block mt-3 px-6 py-2.5 rounded-full bg-gold text-white text-xs font-semibold hover:bg-gold-dark transition-all">
+                                Prenota Appuntamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonianze" class="py-20 bg-silk">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <span class="text-gold-dark uppercase tracking-[0.2em] text-xs font-bold block mb-2">Dicono Di Noi</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-normal text-charcoal">La fiducia delle famiglie foggiane</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-8 rounded-2xl border border-champagne/40 shadow-sm flex flex-col justify-between relative">
+                    <div>
+                        <div class="flex text-gold mb-3">
+                            <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
+                        </div>
+                        <p class="text-charcoal/80 text-sm italic font-light leading-relaxed mb-6">
+                            "Siamo clienti da tantissimi anni, prima con i nostri figli ed adesso con i nipoti. Qualità dei tessuti imbattibile e cortesia che solo una boutique storica sa offrire."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-champagne/20">
+                        <div class="w-10 h-10 rounded-full bg-blush-light text-blush-dark font-serif font-bold flex items-center justify-center text-sm">
+                            MG
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-charcoal">Maria Grazia L.</p>
+                            <p class="text-[10px] text-charcoal/50">Cliente Storica • Foggia</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-8 rounded-2xl border border-champagne/40 shadow-sm flex flex-col justify-between relative">
+                    <div>
+                        <div class="flex text-gold mb-3">
+                            <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
+                        </div>
+                        <p class="text-charcoal/80 text-sm italic font-light leading-relaxed mb-6">
+                            "Abbiamo preso il completo LUIS per il Battesimo del nostro bambino. Il lino ed il cotone erano morbidissimi, non ha avuto neanche un arrossamento. Consigliatissimo!"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-champagne/20">
+                        <div class="w-10 h-10 rounded-full bg-powderblue-light text-powderblue-dark font-serif font-bold flex items-center justify-center text-sm">
+                            SR
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-charcoal">Stefania & Roberto</p>
+                            <p class="text-[10px] text-charcoal/50">Clienti da San Severo</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-8 rounded-2xl border border-champagne/40 shadow-sm flex flex-col justify-between relative">
+                    <div>
+                        <div class="flex text-gold mb-3">
+                            <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
+                        </div>
+                        <p class="text-charcoal/80 text-sm italic font-light leading-relaxed mb-6">
+                            "L'abito ELISA in Mikado e tulle ha lasciato tutti gli invitati a bocca aperta. Curato nei minimi particolari, completo di scarpine meravigliose. Grazie Le Petit!"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-champagne/20">
+                        <div class="w-10 h-10 rounded-full bg-sage-light text-sage-dark font-serif font-bold flex items-center justify-center text-sm">
+                            CV
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-charcoal">Caterina V.</p>
+                            <p class="text-[10px] text-charcoal/50">Cliente da Lucera</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Bar -->
+    <section class="py-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-10">
+        <div class="bg-gradient-to-r from-champagne-light via-blush-light to-champagne-light p-8 md:p-12 rounded-[2rem] border border-gold/30 shadow-md text-center max-w-4xl mx-auto space-y-4 relative overflow-hidden">
+            <span class="text-gold-dark font-bold text-xs uppercase tracking-widest block">Promozione Benvenuto</span>
+            <h3 class="font-serif text-3xl md:text-4xl font-normal text-charcoal">Ricevi il 10% di Sconto sul Primo Ordine</h3>
+            <p class="text-charcoal/70 text-sm font-light max-w-xl mx-auto">
+                Iscriviti per ricevere in anteprima il catalogo delle nuove collezioni da cerimonia ed un buono sconto riservato.
+            </p>
+
+            <form onsubmit="handleNewsletterSubmit(event)" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto pt-2">
+                <input type="email" id="newsletter-email" required placeholder="Inserisci la tua email..." class="px-5 py-3.5 rounded-full border border-gold/30 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-gold flex-grow shadow-inner">
+                <button type="submit" class="bg-gold text-white px-7 py-3.5 rounded-full text-xs font-semibold hover:bg-gold-dark transition-all shadow-md">
+                    Ottieni Sconto
+                </button>
+            </form>
+            <div id="newsletter-alert" class="hidden text-xs text-emerald-700 font-semibold pt-2 bg-emerald-50 max-w-xs mx-auto py-2 rounded-full border border-emerald-200">
+                ✓ Codice Sconto Attivato: <span class="font-mono underline">LEPETIT10</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Self-Hosting & Cloudflare Tunnel Guide -->
+    <section id="hosting-guide" class="py-20 bg-charcoal text-silk">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-12 border-b border-white/10 pb-6 gap-4">
+                <div>
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/20 text-gold-light text-xs font-mono font-semibold mb-2">
+                        <i data-lucide="server" class="w-3.5 h-3.5"></i> Guida Distribuzione Locale
+                    </div>
+                    <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-white">Come Ospitare Questo Sito con Cloudflare Tunnel</h2>
+                    <p class="text-white/60 text-sm mt-2 max-w-2xl font-light">
+                        Guida passo-passo per eseguire questo codice sul tuo computer e pubblicarlo online in pochi secondi con HTTPS e SSL gratuito offerto da Cloudflare.
+                    </p>
+                </div>
+                <div>
+                    <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> 100% Gratuito & Senza Apertura Porte
+                    </span>
+                </div>
+            </div>
+
+            <!-- Steps Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                
+                <!-- Step 1 -->
+                <div class="bg-white/5 p-6 rounded-2xl border border-white/10 hover:border-gold/50 transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="w-8 h-8 rounded-xl bg-gold text-white font-mono font-bold flex items-center justify-center text-sm">1</span>
+                            <span class="text-[10px] text-white/40 font-mono">FASE 1</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-white mb-2">Salva ed Avvia il Server Locale</h3>
+                        <p class="text-xs text-white/60 font-light leading-relaxed mb-4">
+                            Salva questo file come <code class="text-gold-light font-mono bg-black/40 px-1.5 py-0.5 rounded">index.html</code>. Apri il terminale nella cartella ed avvia un webserver integrato:
+                        </p>
+                    </div>
+                    <div class="bg-black/80 p-3 rounded-xl border border-white/10 font-mono text-[11px] text-gold-light flex justify-between items-center">
+                        <code>python3 -m http.server 8080</code>
+                        <button onclick="copyCommand('python3 -m http.server 8080')" class="text-white/50 hover:text-white" title="Copia"><i data-lucide="copy" class="w-4 h-4"></i></button>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-white/5 p-6 rounded-2xl border border-white/10 hover:border-gold/50 transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="w-8 h-8 rounded-xl bg-gold text-white font-mono font-bold flex items-center justify-center text-sm">2</span>
+                            <span class="text-[10px] text-white/40 font-mono">FASE 2</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-white mb-2">Installa cloudflared CLI</h3>
+                        <p class="text-xs text-white/60 font-light leading-relaxed mb-4">
+                            Installa lo strumento ufficiale Cloudflare sul tuo sistema operativo per creare il tunnel crittografato:
+                        </p>
+                    </div>
+                    <div class="bg-black/80 p-3 rounded-xl border border-white/10 font-mono text-[11px] text-gold-light space-y-1">
+                        <div class="flex justify-between items-center">
+                            <span>brew install cloudflared</span>
+                            <button onclick="copyCommand('brew install cloudflared')" class="text-white/50 hover:text-white"><i data-lucide="copy" class="w-3.5 h-3.5"></i></button>
+                        </div>
+                        <p class="text-[10px] text-white/40 pt-1"># Su Windows: winget install Cloudflare.cloudflared</p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="bg-white/5 p-6 rounded-2xl border border-white/10 hover:border-gold/50 transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="w-8 h-8 rounded-xl bg-gold text-white font-mono font-bold flex items-center justify-center text-sm">3</span>
+                            <span class="text-[10px] text-white/40 font-mono">FASE 3</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-white mb-2">Avvia il Tunnel Pubblico SSL</h3>
+                        <p class="text-xs text-white/60 font-light leading-relaxed mb-4">
+                            Esegui il Quick Tunnel per ottenere un URL HTTPS gratuito e sicuro accessibile in tutto il mondo:
+                        </p>
+                    </div>
+                    <div class="bg-black/80 p-3 rounded-xl border border-white/10 font-mono text-[11px] text-gold-light flex justify-between items-center">
+                        <code>cloudflared tunnel --url http://localhost:8080</code>
+                        <button onclick="copyCommand('cloudflared tunnel --url http://localhost:8080')" class="text-white/50 hover:text-white" title="Copia"><i data-lucide="copy" class="w-4 h-4"></i></button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Interactive Terminal Simulator -->
+            <div class="bg-black/90 rounded-2xl border border-white/15 p-5 font-mono shadow-2xl">
+                <div class="flex items-center justify-between border-b border-white/10 pb-3 mb-4">
+                    <div class="flex items-center gap-2">
+                        <span class="w-3 h-3 rounded-full bg-rose-500 inline-block"></span>
+                        <span class="w-3 h-3 rounded-full bg-amber-500 inline-block"></span>
+                        <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span>
+                        <span class="text-xs text-white/50 ml-2">Terminal Simulator — cloudflared tunnel</span>
+                    </div>
+                    <button onclick="runTerminalSim()" class="px-3 py-1 rounded bg-gold/20 text-gold-light hover:bg-gold/30 text-xs font-sans font-semibold transition-all">
+                        ▶ Test Simulator
+                    </button>
+                </div>
+
+                <div id="terminal-output" class="text-xs space-y-1.5 text-white/80 min-h-[140px] font-mono leading-relaxed">
+                    <p class="text-white/40">$ Clicca su "Test Simulator" per simulare l'output di avvio del Cloudflare Tunnel...</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact & Store Information Section -->
+    <section id="contatti" class="py-20 bg-silk">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Info Cards -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div>
+                        <span class="text-gold-dark uppercase tracking-[0.2em] text-xs font-bold block mb-1">Vieni a Trovarci</span>
+                        <h2 class="font-serif text-3xl sm:text-4xl font-normal text-charcoal">Contatti Atelier Foggia</h2>
+                        <p class="text-charcoal/60 text-sm mt-2 font-light">Saremo felici di accoglierti per guidarti nella scelta del capo perfetto.</p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="p-5 rounded-2xl bg-white border border-champagne/40 shadow-sm flex items-start gap-4">
+                            <div class="p-3 rounded-xl bg-gold/10 text-gold-dark flex-shrink-0">
+                                <i data-lucide="phone-call" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-charcoal">Telefono & Assistenza</h4>
+                                <a href="tel:0881709881" class="text-sm font-serif font-bold text-gold-dark hover:underline block mt-0.5">0881 709881</a>
+                                <p class="text-xs text-charcoal/50 mt-1">Attivo negli orari di apertura atelier</p>
+                            </div>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-white border border-champagne/40 shadow-sm flex items-start gap-4">
+                            <div class="p-3 rounded-xl bg-gold/10 text-gold-dark flex-shrink-0">
+                                <i data-lucide="map-pin" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-charcoal">Punto Vendita Foggia</h4>
+                                <p class="text-xs text-charcoal/70 mt-1">Via Cialdini / Foggia (FG), Apulia - Italia</p>
+                                <p class="text-xs text-charcoal/50 mt-0.5">Storica boutique operante dal 1978</p>
+                            </div>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-white border border-champagne/40 shadow-sm flex items-start gap-4">
+                            <div class="p-3 rounded-xl bg-gold/10 text-gold-dark flex-shrink-0">
+                                <i data-lucide="clock" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-charcoal">Orari di Apertura</h4>
+                                <p class="text-xs text-charcoal/70 mt-1">Lunedì - Sabato: 09:30 - 13:00 | 17:00 - 20:30</p>
+                                <p class="text-xs text-charcoal/50 mt-0.5">Domenica: Chiuso (Ricevimento su appuntamento)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Booking Form -->
+                <div class="lg:col-span-7 bg-white p-8 rounded-3xl border border-champagne/50 shadow-md">
+                    <span class="text-gold-dark uppercase tracking-widest text-xs font-bold block mb-1">Richiesta Veloce</span>
+                    <h3 class="font-serif text-2xl font-semibold text-charcoal mb-4">Prenota una Prova o Richiedi Informazioni</h3>
+                    
+                    <form onsubmit="handleBookingSubmit(event)" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-charcoal/70 uppercase tracking-wider mb-1">Nome e Cognome</label>
+                                <input type="text" required placeholder="Es. Anna Rossi" class="w-full px-4 py-3 rounded-xl border border-champagne bg-silk/50 text-sm focus:outline-none focus:ring-2 focus:ring-gold">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-charcoal/70 uppercase tracking-wider mb-1">Telefono / WhatsApp</label>
+                                <input type="tel" required placeholder="Es. 340 1234567" class="w-full px-4 py-3 rounded-xl border border-champagne bg-silk/50 text-sm focus:outline-none focus:ring-2 focus:ring-gold">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-charcoal/70 uppercase tracking-wider mb-1">Capo di Interesse</label>
+                            <select class="w-full px-4 py-3 rounded-xl border border-champagne bg-silk/50 text-sm focus:outline-none focus:ring-2 focus:ring-gold">
+                                <option>Completo Battesimo LUIS (Bimbo)</option>
+                                <option>Completo Battesimo LUCA (Bimbo)</option>
+                                <option>Completo Battesimo MIRKO (Bimbo)</option>
+                                <option>Abito Battesimo ELISA (Bimba)</option>
+                                <option>Completo Battesimo ROBERTO (Bimbo)</option>
+                                <option>Abito Battesimo FLORIS (Bimba)</option>
+                                <option>Abito Battesimo MARTA (Bimba)</option>
+                                <option>Abito Battesimo ROBERTA (Bimba)</option>
+                                <option>Completo Battesimo VINNY (Bimbo)</option>
+                                <option>Altro / Consulenza Generica</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-charcoal/70 uppercase tracking-wider mb-1">Note o Data dell'Evento</label>
+                            <textarea rows="3" placeholder="Indica la presunta data del battesimo o l'età del bambino..." class="w-full px-4 py-3 rounded-xl border border-champagne bg-silk/50 text-sm focus:outline-none focus:ring-2 focus:ring-gold"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 rounded-xl bg-gold text-white font-semibold text-xs uppercase tracking-wider hover:bg-gold-dark transition-all shadow-md">
+                            Invia Richiesta Appuntamento
+                        </button>
+                    </form>
+                    <p id="booking-alert" class="hidden text-xs text-emerald-700 font-semibold text-center pt-3">✓ Richiesta inviata con successo! Ti ricontatteremo a breve.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-charcoal text-silk pt-16 pb-12 border-t border-champagne/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+                
+                <div class="space-y-4">
+                    <span class="font-serif text-2xl font-bold text-white block">Le Petit Enfant</span>
+                    <p class="text-xs text-white/60 font-light leading-relaxed">
+                        Boutique specializzata in abiti da cerimonia per bambini. Operiamo a Foggia dal 1978 con passione, eleganza e qualità Made in Italy.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-gold-light font-bold text-xs uppercase tracking-wider mb-4">Navigazione Rapida</h4>
+                    <ul class="space-y-2 text-xs text-white/60 font-light">
+                        <li><a href="#collezione" class="hover:text-white transition-colors">I 9 Capi da Battesimo</a></li>
+                        <li><a href="#chi-siamo" class="hover:text-white transition-colors">La Nostra Storia</a></li>
+                        <li><a href="#testimonianze" class="hover:text-white transition-colors">Dicono di Noi</a></li>
+                        <li><a href="#hosting-guide" class="hover:text-white transition-colors">Guida Cloudflare Tunnel</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-gold-light font-bold text-xs uppercase tracking-wider mb-4">Tessuti & Materiali</h4>
+                    <ul class="space-y-2 text-xs text-white/60 font-light">
+                        <li>100% Puro Lino Italiano</li>
+                        <li>Cotone Biologico Anallergico</li>
+                        <li>Mikado & Organza di Seta</li>
+                        <li>Pizzo Ricamato ad Ago</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-gold-light font-bold text-xs uppercase tracking-wider mb-4">Punto Vendita Foggia</h4>
+                    <p class="text-xs text-white/60 leading-relaxed mb-3">
+                        Tel: <a href="tel:0881709881" class="text-gold-light font-semibold">0881 709881</a><br>
+                        Foggia (FG), Puglia - Italia
+                    </p>
+                    <div class="flex gap-2">
+                        <a href="https://wa.me/390881709881" target="_blank" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-emerald-400 hover:bg-emerald-500 hover:text-white transition-all">
+                            <i data-lucide="message-circle" class="w-4 h-4"></i>
+                        </a>
+                        <a href="tel:0881709881" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-gold-light hover:bg-gold hover:text-white transition-all">
+                            <i data-lucide="phone" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-white/40 gap-4">
+                <p>© 2026 Le Petit Enfant • Boutique Cerimonia Bambini Foggia dal 1978</p>
+                <p>Basato sul sito ufficiale <code class="text-gold-light">lepetitfoggia.wordpress.com</code></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Product Detail Modal -->
+    <div id="product-modal" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-xl w-full overflow-hidden shadow-2xl border border-champagne/50 animate-in fade-in zoom-in duration-200">
+            <div class="relative h-72 bg-champagne-light">
+                <img id="modal-img" src="" alt="" class="w-full h-full object-cover">
+                <button onclick="closeProductModal()" class="absolute top-4 right-4 w-9 h-9 bg-white/90 rounded-full flex items-center justify-center text-charcoal hover:bg-white transition-all shadow-md">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+                <span id="modal-badge" class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-md text-gold-dark text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full border border-gold/20"></span>
+            </div>
+            
+            <div class="p-6 space-y-4">
+                <div>
+                    <span id="modal-mat" class="text-xs font-bold text-gold-dark uppercase tracking-wider"></span>
+                    <h3 id="modal-title" class="font-serif text-2xl font-bold text-charcoal mt-1"></h3>
+                </div>
+
+                <p id="modal-desc" class="text-charcoal/70 text-xs sm:text-sm font-light leading-relaxed"></p>
+
+                <div>
+                    <h4 class="text-xs font-bold text-charcoal uppercase tracking-wider mb-2">Composizione del Capo:</h4>
+                    <div id="modal-tags" class="flex flex-wrap gap-1.5"></div>
+                </div>
+
+                <div class="pt-2">
+                    <h4 class="text-xs font-bold text-charcoal uppercase tracking-wider mb-2">Taglie Disponibili in Atelier:</h4>
+                    <div class="flex gap-2 text-xs font-semibold">
+                        <span class="px-3 py-1 rounded-lg border border-champagne bg-silk">1-3 Mesi</span>
+                        <span class="px-3 py-1 rounded-lg border border-champagne bg-silk">3-6 Mesi</span>
+                        <span class="px-3 py-1 rounded-lg border border-champagne bg-silk">6-9 Mesi</span>
+                        <span class="px-3 py-1 rounded-lg border border-champagne bg-silk">9-12 Mesi</span>
+                    </div>
+                </div>
+
+                <div class="pt-4 border-t border-champagne/30 flex flex-col sm:flex-row gap-2.5">
+                    <a id="modal-wa-btn" href="#" target="_blank" class="flex-1 py-3 bg-emerald-600 text-white rounded-xl font-semibold text-xs hover:bg-emerald-700 transition-all flex items-center justify-center gap-2 shadow-sm">
+                        <i data-lucide="message-circle" class="w-4 h-4"></i> Richiedi Disponibilità su WhatsApp
+                    </a>
+                    <button onclick="closeProductModal()" class="px-5 py-3 border border-champagne rounded-xl text-xs font-semibold text-charcoal/70 hover:bg-silk">
+                        Chiudi
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // All 9 Real Products Data from WordPress site
+        const productsData = [
+            {
+                name: "Completo Battesimo LUIS",
+                mat: "Cotone 100% Made In Italy",
+                category: "Bimbo",
+                desc: "Completo all'inglese elegantissimo composto da gilet finemente rifinito, papillon in tinta e scarpine coordinate in morbida pelle.",
+                img: "https://lepetitfoggia.files.wordpress.com/2018/03/completo-battesimo-luis.jpg",
+                items: ["Gilet Cucito", "Papillon", "Scarpine in Pelle", "Camicia Cotone"]
+            },
+            {
+                name: "Completo Battesimo LUCA",
+                mat: "Cotone / Viscosa Made In Italy",
+                category: "Bimbo",
+                desc: "Abiti formale classico con giacca sartoriale a bottoni, papillon coordinato e scarpine traspiranti in pelle prima scelta.",
+                img: "https://lepetitfoggia.files.wordpress.com/2018/03/completo-battesimo-luca.jpg",
+                items: ["Giacca Formale", "Papillon Satinato", "Scarpine in Pelle", "Pantalone Cotone"]
+            },
+            {
+                name: "Completo Battesimo MIRKO",
+                mat: "Cotone / Lino 100% Made In Italy",
+                category: "Bimbo",
+                desc: "Stile all'inglese fresco estivo con bretelle elasticizzate regolabili, camicia con collo alla coreana e scarpine in pelle.",
+                img: "https://lepetitfoggia.files.wordpress.com/2018/03/completo-battesimo-mirko.jpg",
+                items: ["Camicia Coreana", "Bretelle", "Pantaloncino Lino", "Scarpine in Pelle"]
+            },
+            {
+                name: "Abito Battesimo ELISA",
+                mat: "Tulle e Mikado di Seta",
+                category: "Bimba",
+                desc: "Incantevole abito da principessa con gonna in tulle a più strati, corpetto lucido in mikado e scarpine coordinate in pelle.",
+                img: "https://lepetitfoggia.files.wordpress.com/2018/03/abito-battesimo-elisa.jpg",
+                items: ["Abito Mikado & Tulle", "Scarpine in Pelle", "Fascia Capelli"]
+            },
+            {
+                name: "Completo Battesimo ROBERTO",
+                mat: "Lino / Cotone 100% Made In Italy",
+                category: "Bimbo",
+                desc: "Completo all'inglese traspirante e morbido con bretelle, papillon e scarpine biologiche in puro cotone.",
+                img: "https://lepetitfoggia.files.wordpress.com/2018/03/completo-battesimo-roberto.jpg",
+                items: ["Bretelle", "Papillon", "Scarpine Cotone", "Camicina"]
+            },
+            {
+                name: "Abito Battesimo FLORIS",
+                mat: "Mikado & Organza di Seta",
+                category: "Bimba",
+                desc: "Creazione eterea con applicazione fiorita sul punto vita, veli di organza trasparente e scarpine in pelle finemente rifinite.",
+                img: "https://lepetitfoggia.files.wordpress.com/2018/03/abito-battesimo-floris.jpg",
+                items: ["Abito Organza", "Dettaglio Floreale", "Scarpine in Pelle"]
+            },
+            {
+                name: "Abito Battesimo MARTA",
+                mat: "Mikado & Organza Classica",
+                category: "Bimba",
+                desc: "Design tradizionale e pulito in tessuto mikado satinato con fiocco staccabile posteriore e scarpine in pelle.",
+                img: "https://lepetitfoggia.files.wordpress.com/2018/03/abito-battesimo-marta.jpg",
+                items: ["Abito Mikado", "Fiocco Posteriore", "Scarpine in Pelle"]
+            },
+            {
+                name: "Abito Battesimo ROBERTA",
+                mat: "Tulle & Pizzo Cantù Ricamato",
+                category: "Bimba",
+                desc: "Abito sartoriale impreziosito da corpetto in pizzo lavorato ad ago, gonna soffice in tulle e sottogonna anallergico.",
+                img: "https://lepetitfoggia.files.wordpress.com/2018/03/abito-battesimo-roberta.jpg",
+                items: ["Abito Pizzo", "Coprispalle Tulle", "Scarpine in Pelle"]
+            },
+            {
+                name: "Completo Battesimo VINNY",
+                mat: "Puro Lino 100% Made In Italy",
+                category: "Bimbo",
+                desc: "Uno dei completi più amati: set vintage chic con gilet in lino, papillon, coppola abbinata e scarpine in pelle.",
+                img: "https://lepetitfoggia.files.wordpress.com/2018/03/completo-battesimo-vinny.jpg",
+                items: ["Gilet Lino", "Coppola Vintage", "Papillon", "Scarpine in Pelle"]
+            }
+        ];
+
+        // Mobile Menu Drawer Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Catalog Filter Logic
+        function filterCatalog(category) {
+            const cards = document.querySelectorAll('.product-card');
+            const btns = document.querySelectorAll('.filter-btn');
+
+            btns.forEach(btn => btn.classList.remove('tab-active'));
+            event.target.classList.add('tab-active');
+
+            cards.forEach(card => {
+                const cats = card.getAttribute('data-category');
+                if (category === 'all' || cats.includes(category)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Open Product Modal
+        function openProductModal(index) {
+            const p = productsData[index];
+            document.getElementById('modal-title').innerText = p.name;
+            document.getElementById('modal-mat').innerText = p.mat;
+            document.getElementById('modal-desc').innerText = p.desc;
+            document.getElementById('modal-badge').innerText = p.category + " • 100% Made in Italy";
+            
+            const img = document.getElementById('modal-img');
+            img.src = p.img;
+            img.onerror = function() {
+                this.src = "https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=800&q=80";
+            };
+
+            const tagsContainer = document.getElementById('modal-tags');
+            tagsContainer.innerHTML = '';
+            p.items.forEach(item => {
+                const span = document.createElement('span');
+                span.className = 'px-3 py-1 bg-champagne-light text-gold-dark text-xs font-semibold rounded-lg border border-gold/20';
+                span.innerText = '✓ ' + item;
+                tagsContainer.appendChild(span);
+            });
+
+            // Set WhatsApp Link
+            const waMsg = encodeURIComponent(`Buongiorno Le Petit Enfant, vorrei informazioni sulla disponibilità del capo: ${p.name}`);
+            document.getElementById('modal-wa-btn').href = `https://wa.me/390881709881?text=${waMsg}`;
+
+            document.getElementById('product-modal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeProductModal() {
+            document.getElementById('product-modal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Newsletter Handler
+        function handleNewsletterSubmit(e) {
+            e.preventDefault();
+            document.getElementById('newsletter-alert').classList.remove('hidden');
+            document.getElementById('newsletter-email').value = '';
+        }
+
+        // Booking Form Handler
+        function handleBookingSubmit(e) {
+            e.preventDefault();
+            document.getElementById('booking-alert').classList.remove('hidden');
+            e.target.reset();
+        }
+
+        // Copy Terminal Command
+        function copyCommand(text) {
+            document.execCommand('copy');
+            alert('Comando copiato negli appunti: ' + text);
+        }
+
+        // Terminal Simulator
+        function runTerminalSim() {
+            const out = document.getElementById('terminal-output');
+            out.innerHTML = `
+                <p class="text-white/40">$ cloudflared tunnel --url http://localhost:8080</p>
+                <p class="text-emerald-400">2026-10-11T13:45:01Z INF Starting tunnel tunnelID=a8f92b3c-4d5e</p>
+                <p class="text-emerald-400">2026-10-11T13:45:02Z INF Version 2026.3.0</p>
+                <p class="text-emerald-400">2026-10-11T13:45:03Z INF Registered tunnel connection connIndex=0 location=MIL</p>
+                <p class="text-gold-light pt-2 font-bold">Your quick tunnel has been created! Visit it at:</p>
+                <p class="text-emerald-300 underline font-bold bg-emerald-950/50 p-2 rounded border border-emerald-500/30">https://le-petit-foggia-boutique.trycloudflare.com</p>
+            `;
+        }
+    </script>
+</body>
+</html>
